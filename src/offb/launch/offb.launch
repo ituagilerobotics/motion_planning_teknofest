@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="vehicle" default="iris"/>
+    <include file="$(find px4)/launch/mavros_posix_sitl.launch">
+        <arg name="vehicle" value="$(arg vehicle)"/>
+    </include>
+
+    <node name="offb" pkg="offb" type="offb_node" output="screen"/>
+</launch>
