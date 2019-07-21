@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="vehicle" default="iris"/>
+    <include file="$(find px4)/launch/mavros_posix_sitl.launch">
+        <arg name="vehicle" value="$(arg vehicle)"/>
+    </include>
+
+    <node name="$(anon offb)" pkg="offb" type="simple_takeoff_v2.py" output="screen"/>
+</launch>
